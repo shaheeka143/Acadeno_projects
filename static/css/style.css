@@ -1,0 +1,5 @@
+body { font-family: Arial; background: #f4f4f4; }
+nav { background: black; padding: 10px; }
+.logo { height: 40px; vertical-align: middle; }
+nav a { color: white; margin-left: 20px; text-decoration: none; }
+table { width: 80%; background: white; margin: 20px auto; }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acadeno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark px-4">
+    <div class="d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" height="36" class="me-2">
+        <strong class="text-white">ACADENO</strong>
+    </div>
+
+    <div>
+        <span class="badge bg-primary">Matched: {{ total_matches }}</span>
+        <span class="badge bg-success">Top: {{ top_match }}%</span>
+    </div>
+
+    <div class="text-white text-end">
+        <div>{{ user_email }}</div>
+        <small>{{ user_role }} | {{ user_status }}</small>
+        <a href="/logout" class="btn btn-outline-light btn-sm ms-2">Logout</a>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

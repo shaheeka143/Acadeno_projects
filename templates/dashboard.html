@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Matched Jobs</h3>
+
+{% if matches %}
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Job</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Match %</th>
+            <th>Apply</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for job in matches %}
+        <tr>
+            <td>{{ job.title }}</td>
+            <td>{{ job.company }}</td>
+            <td>{{ job.location }}</td>
+            <td><span class="badge bg-success">{{ job.score }}%</span></td>
+            <td>
+                <a href="{{ job.apply_link }}" target="_blank">Apply</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning mt-4">
+    No matching jobs found for your resume.
+    <br>
+    Try uploading a resume with relevant technical skills.
+</div>
+{% endif %}
+
+{% endblock %}
